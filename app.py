@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Page routes
+# Page routes for the mental health support website (created by Han) #
 @app.route('/')
 def home():
     return render_template('home.html')
