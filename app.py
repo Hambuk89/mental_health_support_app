@@ -3,9 +3,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # Page routes for the mental health support website (created by Han) #
-@app.route('/')
-def home():
-    return render_template('home.html')
+@app.route("/")
+def dashboard():
+    return render_template("dashboard.html")
 
 @app.route('/about')
 def about():
@@ -15,9 +15,9 @@ def about():
 def profile():
     return render_template('profile.html')
 
-@app.route('/forum')
-def forum():
-    return render_template('forum.html')
+@app.route("/qa_forum")
+def qa_forum():
+    return render_template("qa_forum.html")
 
 @app.route('/mood')
 def mood():

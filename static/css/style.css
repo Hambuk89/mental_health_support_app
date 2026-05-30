@@ -1,0 +1,129 @@
+/* Style File by Aki */
+:root {
+  --primary: #7A8F6A;      /* Moss Green */
+  --secondary: #D9CBB8;    /* Clay Beige */
+  --accent: #C57A5A;       /* Terracotta */
+  --surface: #EFE8DA;      /* Soft Sand */
+  --text: #4A3F35;         /* Deep Earth Brown */
+}
+
+/* Background */
+.home-bg {
+  background-color: var(--primary); /* moss green */
+  min-height: 100vh;
+  padding: 30px;
+  font-family: 'Merriweather', serif;
+}
+
+/* Welcome box */
+.welcome-box {
+  border: 2px solid white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 30px;
+  transition: 0.2s ease;
+  color: white;
+}
+
+.welcome-title {
+  font-size: 24px;
+  margin: 0;
+  color: white;
+}
+
+.welcome-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  color: white;
+}
+
+.welcome-box:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* button grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* buttons */
+.feature-btn {
+  background-color: white;
+  color: var(--primary);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid white;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.feature-btn:hover {
+  background-color: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Page background */
+.page-bg {
+  background-color: var(--primary);
+  min-height: 100vh;
+  padding: 30px;
+  font-family: 'Merriweather', serif;
+}
+
+/* Page header box */
+.page-header {
+  border: 2px solid white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  transition: 0.2s ease;
+}
+
+.page-header:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* Page content box */
+.page-content {
+  border: 2px solid white;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Buttons (to remain same as dashboard on all pages) */
+.feature-btn {
+  background-color: white;
+  color: var(--primary);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid white;
+  text-decoration: none;
+  transition: 0.2s ease;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.feature-btn:hover {
+  background-color: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+}
