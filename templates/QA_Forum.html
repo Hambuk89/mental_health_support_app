@@ -1,4 +1,4 @@
-<!-- Q&A Forum Page created by Han-->
+<!-- Q&A Forum Page created by Aki -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +8,70 @@
 
 <body class="page-bg">
 
-<div class="page-header">
-    <h1>Q&A Forum</h1>
+<!-- Top bar -->
+<div class="top-bar">
+    <a href="/" class="top-btn">LOGO</a>
+    <a href="/login" class="top-btn">LOGIN</a>
 </div>
 
-<div class="page-content">
-    <p>Ask questions, get answers, and learn from others in the community.</p>
+<!-- Page header -->
+<div class="page-header">
+    <h1>Q&A FORUM</h1>
+</div>
+
+<!-- Main layout -->
+<div class="qa-layout">
+
+    <!-- Left column: list of questions -->
+    <div class="questions-box">
+
+        <h2 class="qa-title">QUESTIONS</h2>
+
+        <div class="question-btn"><p>QUESTION 1</p></div>
+        <div class="question-btn"><p>QUESTION 2</p></div>
+        <div class="question-btn"><p>QUESTION 3</p></div>
+        <div class="question-btn"><p>QUESTION 4</p></div>
+
+        <div class="post-question-btn"><p>POST A QUESTION</p></div>
+
+    </div>
+
+    <!-- Right column: selected question + answers -->
+    <div class="answers-box">
+
+        <!-- Selected question placeholder -->
+        <div class="selected-question">
+            <p class="msg-label">SELECTED QUESTION</p>
+            <div class="placeholder-line"></div>
+            <div class="placeholder-line"></div>
+            <div class="placeholder-line short"></div>
+        </div>
+
+        <!-- Answer placeholders -->
+        <div class="chat-placeholder user-msg">
+            <p class="msg-label">USER ANSWER</p>
+            <div class="placeholder-line"></div>
+            <div class="placeholder-line short"></div>
+        </div>
+
+        <div class="chat-placeholder bot-msg">
+            <p class="msg-label">OTHER USER</p>
+            <div class="placeholder-line"></div>
+            <div class="placeholder-line short"></div>
+        </div>
+
+        <!-- Typing box -->
+        <div class="typing-placeholder">
+            <p>Type your answer...</p>
+        </div>
+
+        <!-- Submit answer -->
+        <div class="send-placeholder">
+            <p>SUBMIT ANSWER</p>
+        </div>
+
+    </div>
+
 </div>
 
 <a href="/" class="feature-btn">Back to Home</a>

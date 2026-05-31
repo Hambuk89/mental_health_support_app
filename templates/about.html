@@ -1,19 +1,37 @@
-<!-- About Page created by Aki-->
+<!-- About Page created by Han -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body class="page-bg">
 
-<div class="page-header">
-    <h1>About This App</h1>
+<!-- Top bar -->
+<div class="top-bar">
+    <a href="/" class="top-btn">LOGO</a>
+    <a href="/login" class="top-btn">LOGIN</a>
 </div>
 
+<!-- About header -->
+<div class="page-header">
+    <h1>ABOUT US</h1>
+</div>
+
+<!-- Placeholder image box -->
+<div class="placeholder-box">
+    <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" class="placeholder-img">
+</div>
+
+<!-- Mission Statement section -->
 <div class="page-content">
-    <p>This wellbeing app was created to support mental health through tools, journaling, and community.</p>
+    <h2 class="section-title">MISSION STATEMENT</h2>
+
+    <div class="placeholder-line"></div>
+    <div class="placeholder-line"></div>
+    <div class="placeholder-line"></div>
+    <div class="placeholder-line short"></div>
 </div>
 
 <a href="/" class="feature-btn">Back to Home</a>

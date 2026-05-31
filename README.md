@@ -11,7 +11,7 @@ Features included int this prototype:
 (All pages are fully styled and are navigable, as required)
 
 Each page has been designed using the following:
-    Green Background, white outlined cards/buttons, merriweather font, consistent hover animations, and a clean app-like layout to fit with our mobile display.
+    Green Background, white outlined cards/buttons, merriweather font, consistent hover animations, and a clean app-like layout to fit for a mobile display.
 This is to ensure a nice and cohesive user experience that promotes calmness while being aligned with the mental-health theme as is appropriate for our app.
 
 Technologies used:

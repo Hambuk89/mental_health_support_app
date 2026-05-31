@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Page routes for the mental health support website (created by Han) #
+# Page routes for the mental health support website (created by Han and Aki) #
 @app.route("/")
 def dashboard():
     return render_template("dashboard.html")

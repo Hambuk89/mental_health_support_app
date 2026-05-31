@@ -2,18 +2,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Self Help</title>
+    <title>Self Help Tools</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body class="page-bg">
 
-<div class="page-header">
-    <h1>Self Help</h1>
+<!-- Top bar -->
+<div class="top-bar">
+    <a href="/" class="top-btn">LOGO</a>
+    <a href="/login" class="top-btn">LOGIN</a>
 </div>
 
-<div class="page-content">
-    <p>Explore tools, exercises, and resources to support your mental wellbeing.</p>
+<!-- Page header -->
+<div class="page-header">
+    <h1>SELF HELP TOOLS</h1>
+</div>
+
+<!-- Exercise 1 -->
+<div class="exercise-block">
+
+    <h2 class="exercise-title">EXERCISE 1</h2>
+
+    <div class="exercise-layout">
+
+        <!-- Text placeholder -->
+        <div class="exercise-text">
+            <div class="placeholder-line"></div>
+            <div class="placeholder-line"></div>
+            <div class="placeholder-line short"></div>
+        </div>
+
+        <!-- Image placeholder (same as About page) -->
+        <div class="exercise-image">
+            <img src="{{ url_for('static', filename='images//What-is-Mental-Health.jpeg') }}" class="placeholder-img">
+        </div>
+
+    </div>
+</div>
+
+<!-- Exercise 2 -->
+<div class="exercise-block">
+
+    <h2 class="exercise-title">EXERCISE 2</h2>
+
+    <div class="exercise-layout">
+
+        <!-- Text placeholder -->
+        <div class="exercise-text">
+            <div class="placeholder-line"></div>
+            <div class="placeholder-line"></div>
+            <div class="placeholder-line short"></div>
+        </div>
+
+        <!-- Image placeholder -->
+        <div class="exercise-image">
+            <img src="{{ url_for('static', filename='images//What-is-Mental-Health.jpeg') }}" class="placeholder-img">
+        </div>
+
+    </div>
 </div>
 
 <a href="/" class="feature-btn">Back to Home</a>
