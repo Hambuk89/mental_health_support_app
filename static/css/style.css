@@ -134,6 +134,12 @@
   margin-bottom: 30px;
 }
 
+.logo-img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
 .top-btn {
   background-color: white;
   color: var(--primary);
@@ -142,7 +148,10 @@
   border-radius: 8px;
   font-weight: 700;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
   transition: 0.2s ease;
 }
 

@@ -10,7 +10,9 @@
 
 <!-- Top bar -->
 <div class="top-bar">
-    <a href="/" class="top-btn">LOGO</a>
+    <a href="/" class="top-btn">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+    </a>
     <a href="/login" class="top-btn">LOGIN</a>
 </div>
 
