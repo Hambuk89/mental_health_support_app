@@ -1,6 +1,6 @@
 #Set up the Flask application and database configuration (By Han)
 from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+from extensions import db
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+db.init_app(app)
 
 from models import User
 
