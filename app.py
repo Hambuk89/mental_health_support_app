@@ -1,6 +1,16 @@
+#Set up the Flask application and database configuration (By Han)
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
+# Configure the SQLite database (By Han)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+from models import User
 
 # Page routes for the mental health support website (created by Han and Aki) #
 @app.route("/")
@@ -43,5 +53,14 @@ def chat():
 def community():
     return render_template('community.html')
 
+@app.route('/Users')
+def users():
+    all_users = User.query.all()
+    return str(all_users)
+
 if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)
+
+
