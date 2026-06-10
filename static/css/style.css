@@ -260,7 +260,7 @@
   border-radius: 12px 12px 0 0;
   background-color: transparent;
   color: white;
-  padding: 18px; /* matches your reference spacing */
+  padding: 18px; 
   font-size: 16px;
   font-family: 'Merriweather', serif;
   opacity: 0.9;
@@ -277,7 +277,7 @@
   font-weight: 700;
   opacity: 0.9;
   transition: 0.2s ease;
-  margin-top: -22px; /* overlaps borders so the dividing line is a single clean line */
+  margin-top: -22px; 
 }
 
 .typing-box::placeholder {
@@ -332,7 +332,6 @@
   margin: 0 auto 40px auto;
 }
 
-
 /* Mood boxes */
 .mood-circle .mood-box {
   position: absolute;
@@ -378,9 +377,9 @@
 /* Layout: categories left, messages right */
 .community-layout {
 display: grid;
-  grid-template-columns: 140px 1fr; /* fixed sidebar + flexible messages */
+  grid-template-columns: 140px 1fr; 
   gap: 20px;
-  width: 520px;      /* forces side-by-side layout */
+  width: 520px;     
   min-width: 520px;
 }
 
@@ -615,15 +614,15 @@ display: grid;
 
 /* Scale the community layout to fit mobile */
 .community-scale {
-    transform: scale(0.75);      /* shrink to 75% */
-    transform-origin: top left;  /* scale from the top-left corner */
-    width: 100%;                 /* allow it to fit inside wrapper */
+    transform: scale(0.75);      
+    transform-origin: top left; 
+    width: 100%;                
 }
 
 /* MOBILE COMMUNITY LAYOUT */
 .community-mobile {
     display: grid;
-    grid-template-columns: 120px 1fr; /* perfect mobile proportions */
+    grid-template-columns: 120px 1fr; 
     gap: 15px;
     width: 100%;
 }
@@ -666,7 +665,7 @@ display: grid;
     margin-top: -17px;
 }
 
-/* Sidebar container styled like other boxes */
+/* Sidebar container styled like other boxes within the app*/
 .community-sidebar {
     border: 2px solid white;
     border-radius: 12px;
@@ -679,7 +678,7 @@ display: grid;
     padding: 15px 15px 15px 15px;
 }
 
-/* Category buttons matching your theme */
+/* Category buttons matching the chosen theme */
 .community-sidebar .category-btn {
     border: 2px solid white;
     border-radius: 10px;

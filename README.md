@@ -47,9 +47,9 @@ How to RUN the application:
     2. Then install Flask using:
         pip install flask
 
-    3. Proceed to run the app, using:
+    3. Proceed to run the app, using the command:
         python app.py
 
     4. Finally, open in browser using the following:
         http://127.0.0.1:5000
-    And the dashboard will then load automatically for display and navigation
+    And the dashboard will then load automatically for display and navigation.
