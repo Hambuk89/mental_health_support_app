@@ -1,4 +1,4 @@
-<!-- Dashboard Page (Main) created by Han-->
+<!-- Dashboard Page (Main) created by Han -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,32 +8,37 @@
 
 <body class="home-bg">
 
-<!-- Top bar -->
-<div class="top-bar">
-    <a href="/" class="top-btn">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+<div class="mobile-wrapper">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="/" class="top-btn">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+        </a>
+        <a href="/login" class="top-btn">LOGIN</a>
+    </div>
+
+    <!-- Welcome box -->
+    <a href="/" class="welcome-box">
+        <h1 class="welcome-title">Welcome to Your Wellbeing Space</h1>
+        <p class="welcome-subtitle">Supporting your mind, mood, and community — one step at a time.</p>
     </a>
-    <a href="/login" class="top-btn">LOGIN</a>
-</div>
 
-<!-- Welcome box -->
-<a href="/" class="welcome-box">
-    <h1 class="welcome-title">Welcome to Your Wellbeing Space</h1>
-    <p class="welcome-subtitle">Supporting your mind, mood, and community — one step at a time.</p>
-</a>
+    <!-- Navigation grid -->
+    <div class="feature-grid">
 
-<!-- navigation grid -->
-<div class="feature-grid">
+        <a href="/chat" class="feature-btn">Chat</a>
+        <a href="/mood" class="feature-btn">Mood Journal</a>
+        <a href="/community" class="feature-btn">Community Forum</a>
+        <a href="/self_help" class="feature-btn">Self Help</a>
+        <a href="/profile" class="feature-btn">Profile</a>
+        <a href="/about" class="feature-btn">About</a>
+        <a href="/qa_forum" class="feature-btn">Q&A Forum</a>
 
-    <a href="/chat" class="feature-btn">Chat</a>
-    <a href="/mood" class="feature-btn">Mood Journal</a>
-    <a href="/community" class="feature-btn">Community Forum</a>
-    <a href="/self_help" class="feature-btn">Self Help</a>
-    <a href="/profile" class="feature-btn">Profile</a>
-    <a href="/about" class="feature-btn">About</a>
-    <a href="/qa_forum" class="feature-btn">Q&A Forum</a>
+    </div>
 
 </div>
 
 </body>
 </html>
+

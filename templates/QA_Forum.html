@@ -8,75 +8,69 @@
 
 <body class="page-bg">
 
-<!-- Top bar -->
-<div class="top-bar">
-    <a href="/" class="top-btn">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
-    </a>
-    <a href="/login" class="top-btn">LOGIN</a>
-</div>
+<div class="mobile-wrapper">
 
-<!-- Page header -->
-<div class="page-header">
-    <h1>Q&A FORUM</h1>
-</div>
-
-<!-- Main layout -->
-<div class="qa-layout">
-
-    <!-- Left column: list of questions -->
-    <div class="questions-box">
-
-        <h2 class="qa-title">QUESTIONS</h2>
-
-        <div class="question-btn"><p>QUESTION 1</p></div>
-        <div class="question-btn"><p>QUESTION 2</p></div>
-        <div class="question-btn"><p>QUESTION 3</p></div>
-        <div class="question-btn"><p>QUESTION 4</p></div>
-
-        <div class="post-question-btn"><p>POST A QUESTION</p></div>
-
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="/" class="top-btn">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+        </a>
+        <a href="/login" class="top-btn">LOGIN</a>
     </div>
 
-    <!-- Right column: selected question + answers -->
-    <div class="answers-box">
+    <!-- Page header -->
+    <div class="page-header">
+        <h1>Q&A FORUM</h1>
+    </div>
 
-        <!-- Selected question placeholder -->
-        <div class="selected-question">
-            <p class="msg-label">SELECTED QUESTION</p>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line short"></div>
+    <!-- NEW mobile-friendly two-column layout (matching Community) -->
+    <div class="community-mobile">
+
+        <!-- Left sidebar (QUESTIONS) -->
+        <div class="community-sidebar">
+            <h2 class="cat-title">QUESTIONS</h2>
+
+            <div class="category-btn"><p>Q1</p></div>
+            <div class="category-btn"><p>Q2</p></div>
+            <div class="category-btn"><p>Q3</p></div>
+
+            <div class="category-btn"><p>POST A Q</p></div>
         </div>
 
-        <!-- Answer placeholders -->
-        <div class="chat-placeholder user-msg">
-            <p class="msg-label">USER ANSWER</p>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line short"></div>
-        </div>
+        <!-- Right message area (Selected question + answers) -->
+        <div class="community-messages">
 
-        <div class="chat-placeholder bot-msg">
-            <p class="msg-label">OTHER USER</p>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line short"></div>
-        </div>
+            <!-- Selected question -->
+            <div class="chat-placeholder user-msg">
+                <p class="msg-label">SELECTED QUESTION</p>
+                <div class="placeholder-line"></div>
+                <div class="placeholder-line"></div>
+                <div class="placeholder-line short"></div>
+            </div>
 
-        <!-- Typing box -->
-        <div class="typing-placeholder">
-            <p>Type your answer...</p>
-        </div>
+            <!-- Answers -->
+            <div class="chat-placeholder user-msg">
+                <p class="msg-label">USER ANSWER</p>
+                <div class="placeholder-line"></div>
+                <div class="placeholder-line short"></div>
+            </div>
 
-        <!-- Submit answer -->
-        <div class="send-placeholder">
-            <p>SUBMIT ANSWER</p>
+            <!-- Typing + Submit -->
+            <textarea class="typing-box" placeholder="Type your answer..."></textarea>
+
+            <div class="send-placeholder">
+                <p>SUBMIT ANSWER</p>
+            </div>
+
         </div>
 
     </div>
 
-</div>
+    <!-- Back button -->
+    <a href="/" class="feature-btn">Back to Home</a>
 
-<a href="/" class="feature-btn">Back to Home</a>
+</div>
 
 </body>
 </html>
+

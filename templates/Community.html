@@ -1,4 +1,4 @@
-<!-- Community Page created by Aki-->
+<!-- Community Page created by Aki -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,71 +8,67 @@
 
 <body class="page-bg">
 
-<!-- Top bar -->
-<div class="top-bar">
-    <a href="/" class="top-btn">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
-    </a>
-    <a href="/login" class="top-btn">LOGIN</a>
-</div>
+<div class="mobile-wrapper">
 
-<!-- Page header -->
-<div class="page-header">
-    <h1>COMMUNITY CHANNEL</h1>
-</div>
-
-<!-- Main layout -->
-<div class="community-layout">
-
-    <!-- Categories column -->
-    <div class="categories-box">
-        <h2 class="cat-title">CATEGORIES</h2>
-
-        <div class="category-btn"><p>CAT. 1</p></div>
-        <div class="category-btn"><p>CAT. 2</p></div>
-        <div class="category-btn"><p>CAT. 3</p></div>
-        <div class="category-btn"><p>CAT. 4</p></div>
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="/" class="top-btn">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+        </a>
+        <a href="/login" class="top-btn">LOGIN</a>
     </div>
 
-    <!-- Messages column -->
-    <div class="messages-box">
+    <!-- Page header -->
+    <div class="page-header">
+        <h1>COMMUNITY CHANNEL</h1>
+    </div>
 
-        <div class="chat-placeholder user-msg">
-            <p class="msg-label">USER</p>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line short"></div>
+    <!-- NEW mobile-friendly two-column layout -->
+    <div class="community-mobile">
+
+        <!-- Left sidebar -->
+        <div class="community-sidebar">
+            <h2 class="cat-title">CATEGORIES</h2>
+
+            <div class="category-btn"><p>CAT. 1</p></div>
+            <div class="category-btn"><p>CAT. 2</p></div>
+            <div class="category-btn"><p>CAT. 3</p></div>
+            <div class="category-btn"><p>CAT. 4</p></div>
         </div>
 
-        <div class="chat-placeholder bot-msg">
-            <p class="msg-label">OTHER USER</p>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line short"></div>
-        </div>
 
-        <div class="chat-placeholder user-msg">
-            <p class="msg-label">USER</p>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line"></div>
-            <div class="placeholder-line short"></div>
-        </div>
+        <!-- Right message area -->
+        <div class="community-messages">
 
-        <!-- Typing box -->
-        <div class="typing-placeholder">
-            <p>Type your message...</p>
-        </div>
+            <div class="chat-placeholder user-msg">
+                <p class="msg-label">USER</p>
+                <div class="placeholder-line"></div>
+                <div class="placeholder-line"></div>
+                <div class="placeholder-line short"></div>
+            </div>
 
-        <!-- Send message -->
-        <div class="send-placeholder">
-            <p>SEND MESSAGE</p>
+            <div class="chat-placeholder bot-msg">
+                <p class="msg-label">OTHER USER</p>
+                <div class="placeholder-line"></div>
+                <div class="placeholder-line"></div>
+                <div class="placeholder-line short"></div>
+            </div>
+
+            <!-- Typing + Submit -->
+            <textarea class="typing-box" placeholder="Type your message..."></textarea>
+
+            <div class="send-placeholder">
+                <p>SUBMIT ANSWER</p>
+            </div>
+
         </div>
 
     </div>
 
-</div>
+    <!-- Back button -->
+    <a href="/" class="feature-btn">Back to Home</a>
 
-<a href="/" class="feature-btn">Back to Home</a>
+</div>
 
 </body>
 </html>

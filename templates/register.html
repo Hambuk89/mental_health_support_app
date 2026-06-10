@@ -8,42 +8,37 @@
 
 <body class="page-bg">
 
-<!-- Top bar -->
-<div class="top-bar">
-    <a href="/" class="top-btn">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
-    </a>
-    <a href="/login" class="top-btn">LOGIN</a>
-</div>
+<div class="mobile-wrapper">
 
-<!-- Register header -->
-<div class="page-header">
-    <h1>REGISTER</h1>
-</div>
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="/" class="top-btn">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+        </a>
+        <a href="/login" class="top-btn">LOGIN</a>
+    </div>
 
-<!-- Placeholder input boxes -->
-<div class="placeholder-box tall">
-    <p>Full Name</p>
-</div>
+    <!-- Register header -->
+    <div class="page-header">
+        <h1>REGISTER</h1>
+    </div>
 
-<div class="placeholder-box tall">
-    <p>Email</p>
-</div>
+    <!-- Input fields -->
+    <input type="text" class="input-box" placeholder="Full Name">
+    <input type="email" class="input-box" placeholder="Email">
+    <input type="password" class="input-box" placeholder="Password">
+    <input type="password" class="input-box" placeholder="Confirm Password">
 
-<div class="placeholder-box tall">
-    <p>Password</p>
-</div>
+    <!-- Create Account button -->
+    <div class="placeholder-action">
+        <p>CREATE ACCOUNT</p>
+    </div>
 
-<div class="placeholder-box tall">
-    <p>Confirm Password</p>
-</div>
+    <!-- Back button -->
+    <a href="/" class="feature-btn">Back to Home</a>
 
-<!-- Register button -->
-<div class="placeholder-action">
-    <p>CREATE ACCOUNT</p>
 </div>
-
-<a href="/" class="feature-btn">Back to Home</a>
 
 </body>
 </html>
+

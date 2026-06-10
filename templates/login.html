@@ -1,4 +1,4 @@
-<!-- Login Page created by Aki-->
+<!-- Login Page created by Aki -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,44 +8,43 @@
 
 <body class="page-bg">
 
-<!-- Top bar -->
-<div class="top-bar">
-    <a href="/" class="top-btn">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+<div class="mobile-wrapper">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="/" class="top-btn">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+        </a>
+        <a href="/login" class="top-btn">LOGIN</a>
+    </div>
+
+    <!-- Login header -->
+    <div class="page-header">
+        <h1>LOGIN</h1>
+    </div>
+
+    <!-- Input fields -->
+    <input type="text" class="input-box" placeholder="Username / Email">
+    <input type="password" class="input-box" placeholder="Password">
+
+    <!-- Action buttons -->
+    <div class="placeholder-action">
+        <p>USER LOGIN</p>
+    </div>
+
+    <div class="placeholder-action">
+        <p>ADMIN LOGIN</p>
+    </div>
+
+    <a href="/register" class="placeholder-action link-btn">
+        <p>REGISTER / SIGN UP</p>
     </a>
-    <a href="/login" class="top-btn">LOGIN</a>
+
+    <!-- Back button -->
+    <a href="/" class="feature-btn">Back to Home</a>
+
 </div>
-
-<!-- Login / Sign Up header -->
-<div class="page-header">
-    <h1>LOGIN</h1>
-</div>
-
-<!-- Placeholder input boxes -->
-<div class="placeholder-box tall">
-    <p>Username / Email</p>
-</div>
-
-<div class="placeholder-box tall">
-    <p>Password</p>
-</div>
-
-<!-- User login button -->
-<div class="placeholder-action">
-    <p>USER LOGIN</p>
-</div>
-
-<!-- Admin login button -->
-<div class="placeholder-action">
-    <p>ADMIN LOGIN</p>
-</div>
-
-<!-- Register / Sign Up button -->
-<a href="/register" class="placeholder-action link-btn">
-    <p>REGISTER / SIGN UP</p>
-</a>
-
-<a href="/" class="feature-btn">Back to Home</a>
 
 </body>
 </html>
+

@@ -8,35 +8,40 @@
 
 <body class="page-bg">
 
-<!-- Top bar -->
-<div class="top-bar">
-    <a href="/" class="top-btn">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
-    </a>
-    <a href="/login" class="top-btn">LOGIN</a>
+<div class="mobile-wrapper">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="/" class="top-btn">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+        </a>
+        <a href="/login" class="top-btn">LOGIN</a>
+    </div>
+
+    <!-- About header -->
+    <div class="page-header">
+        <h1>ABOUT US</h1>
+    </div>
+
+    <!-- Placeholder image box -->
+    <div class="placeholder-box">
+        <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" class="placeholder-img">
+    </div>
+
+    <!-- Mission Statement section -->
+    <div class="page-content">
+        <h2 class="section-title">MISSION STATEMENT</h2>
+
+        <div class="placeholder-line"></div>
+        <div class="placeholder-line"></div>
+        <div class="placeholder-line"></div>
+        <div class="placeholder-line short"></div>
+    </div>
+
+    <!-- Back button -->
+    <a href="/" class="feature-btn">Back to Home</a>
+
 </div>
-
-<!-- About header -->
-<div class="page-header">
-    <h1>ABOUT US</h1>
-</div>
-
-<!-- Placeholder image box -->
-<div class="placeholder-box">
-    <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" class="placeholder-img">
-</div>
-
-<!-- Mission Statement section -->
-<div class="page-content">
-    <h2 class="section-title">MISSION STATEMENT</h2>
-
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line short"></div>
-</div>
-
-<a href="/" class="feature-btn">Back to Home</a>
 
 </body>
 </html>

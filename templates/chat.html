@@ -1,4 +1,4 @@
-<!-- Mood Page created by Aki -->
+<!-- Chat Page created by Aki -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,54 +8,48 @@
 
 <body class="page-bg">
 
-<!-- Top bar -->
-<div class="top-bar">
-    <a href="/" class="top-btn">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
-    </a>
-    <a href="/login" class="top-btn">LOGIN</a>
-</div>
+<div class="mobile-wrapper">
 
-<!-- Chat header -->
-<div class="page-header">
-    <h1>CHAT</h1>
-</div>
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="/" class="top-btn">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+        </a>
+        <a href="/login" class="top-btn">LOGIN</a>
+    </div>
 
-<!-- USER message placeholder -->
-<div class="chat-placeholder user-msg">
-    <p class="msg-label">USER</p>
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line short"></div>
-</div>
+    <!-- Chat header -->
+    <div class="page-header">
+        <h1>CHAT</h1>
+    </div>
 
-<!-- BOT message placeholder -->
-<div class="chat-placeholder bot-msg">
-    <p class="msg-label">BOT / AGENT</p>
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line short"></div>
-</div>
+    <!-- USER message placeholder -->
+    <div class="chat-placeholder user-msg">
+        <p class="msg-label">USER</p>
+        <div class="placeholder-line"></div>
+        <div class="placeholder-line"></div>
+        <div class="placeholder-line short"></div>
+    </div>
 
-<!-- USER message placeholder -->
-<div class="chat-placeholder user-msg">
-    <p class="msg-label">USER</p>
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line"></div>
-    <div class="placeholder-line short"></div>
-</div>
+    <!-- BOT message placeholder -->
+    <div class="chat-placeholder bot-msg">
+        <p class="msg-label">BOT / AGENT</p>
+        <div class="placeholder-line"></div>
+        <div class="placeholder-line"></div>
+        <div class="placeholder-line short"></div>
+    </div>
 
-<!-- Typing box placeholder -->
-<div class="typing-placeholder">
-    <p>Type your message...</p>
-</div>
+    <!-- Typing + Submit -->
+    <textarea class="typing-box1" placeholder="Type your message..."></textarea>
 
-<!-- Send message placeholder -->
-<div class="send-placeholder">
-    <p>SEND MESSAGE</p>
-</div>
+    <div class="send-placeholder1">
+        <p>SUBMIT ANSWER</p>
+    </div>
 
-<a href="/" class="feature-btn">Back to Home</a>
+    <!-- Back button -->
+    <a href="/" class="feature-btn">Back to Home</a>
+
+</div>
 
 </body>
 </html>

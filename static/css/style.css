@@ -7,6 +7,14 @@
   --text: #4A3F35;         /* Deep Earth Brown */
 }
 
+.mobile-wrapper {
+  width: 390px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: auto; /* NEW */
+}
+
 /* Background */
 .home-bg {
   background-color: var(--primary); /* moss green */
@@ -54,8 +62,8 @@
 
 /* buttons */
 .feature-btn {
-  background-color: white;
-  color: var(--primary);
+  background-color: transparent;
+  color: white;
   padding: 20px;
   border-radius: 12px;
   text-align: center;
@@ -64,6 +72,8 @@
   border: 2px solid white;
   text-decoration: none;
   transition: 0.2s ease;
+  display: block;
+  margin-top: 30px;
 }
 
 .feature-btn:hover {
@@ -238,17 +248,42 @@
 }
 
 /* Send message placeholder */
+.typing-box,
+.send-placeholder {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.typing-box {
+  border: 2px solid white;
+  border-radius: 12px 12px 0 0;
+  background-color: transparent;
+  color: white;
+  padding: 18px; /* matches your reference spacing */
+  font-size: 16px;
+  font-family: 'Merriweather', serif;
+  opacity: 0.9;
+  resize: none;
+  outline: none;
+}
+
 .send-placeholder {
   border: 2px solid white;
-  border-top: none; 
-  border-radius: 0 0 12px 12px; 
+  border-radius: 0 0 12px 12px;
   padding: 20px;
-  margin-top: 0;
   text-align: center;
   color: white;
   font-weight: 700;
   opacity: 0.9;
-  font-size: 18px;
+  transition: 0.2s ease;
+  margin-top: -22px; /* overlaps borders so the dividing line is a single clean line */
+}
+
+.typing-box::placeholder {
+  color: white;
+  opacity: 0.7;
+  letter-spacing: 0.3px;
 }
 
 /* Taller placeholder boxes for inputs */
@@ -292,10 +327,11 @@
 /* Mood circle container */
 .mood-circle {
   position: relative;
-  width: 380px;
-  height: 380px;
+  width: 350px;
+  height: 350px;
   margin: 0 auto 40px auto;
 }
+
 
 /* Mood boxes */
 .mood-circle .mood-box {
@@ -341,10 +377,11 @@
 
 /* Layout: categories left, messages right */
 .community-layout {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 25px;
-  margin-bottom: 40px;
+display: grid;
+  grid-template-columns: 140px 1fr; /* fixed sidebar + flexible messages */
+  gap: 20px;
+  width: 520px;      /* forces side-by-side layout */
+  min-width: 520px;
 }
 
 /* Categories column */
@@ -354,12 +391,6 @@
   padding: 20px;
   color: white;
   opacity: 0.9;
-}
-
-.cat-title {
-  font-size: 20px;
-  margin-bottom: 20px;
-  font-weight: 700;
 }
 
 /* Category buttons */
@@ -524,3 +555,151 @@
   color: white;
   opacity: 0.9;
 }
+/* For the chat page specifically */
+.typing-box1 {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 12px 12px 0 0;
+  background-color: transparent;
+  color: white;
+  padding: 18px;
+  font-size: 16px;
+  font-family: 'Merriweather', serif;
+  opacity: 0.9;
+  resize: none;
+  outline: none;
+  margin: 0;
+}
+
+.typing-box1::placeholder {
+  color: white;
+  opacity: 0.7;
+  letter-spacing: 0.3px;
+}
+
+.send-placeholder1 {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 0 0 12px 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  opacity: 0.9;
+  transition: 0.2s ease;
+  margin: -6px 0 0 0;
+}
+
+.input-box {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: transparent;
+  color: white;
+  padding: 18px;
+  font-size: 16px;
+  font-family: 'Merriweather', serif;
+  opacity: 0.9;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.input-box::placeholder {
+  color: white;
+  opacity: 0.7;
+  letter-spacing: 0.3px;
+}
+
+/* Scale the community layout to fit mobile */
+.community-scale {
+    transform: scale(0.75);      /* shrink to 75% */
+    transform-origin: top left;  /* scale from the top-left corner */
+    width: 100%;                 /* allow it to fit inside wrapper */
+}
+
+/* MOBILE COMMUNITY LAYOUT */
+.community-mobile {
+    display: grid;
+    grid-template-columns: 120px 1fr; /* perfect mobile proportions */
+    gap: 15px;
+    width: 100%;
+}
+
+/* Sidebar */
+.community-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Messages column */
+.community-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Reduce padding for mobile fit */
+.community-sidebar,
+.community-messages,
+.chat-placeholder {
+    padding: 15px;
+}
+
+.category-btn {
+    padding: 10px;
+}
+
+.chat-placeholder {
+    margin-bottom: 10px;
+}
+
+.typing-box {
+    padding: 14px;
+}
+
+.send-placeholder {
+    padding: 16px;
+    margin-top: -17px;
+}
+
+/* Sidebar container styled like other boxes */
+.community-sidebar {
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 15px 15px 15px;
+}
+
+/* Category buttons matching your theme */
+.community-sidebar .category-btn {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    opacity: 0.9;
+    transition: 0.2s ease;
+}
+
+.community-sidebar .category-btn:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.community-sidebar .cat-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 13.5px;
+    text-align: center;
+}
+
