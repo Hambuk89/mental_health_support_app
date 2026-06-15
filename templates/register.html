@@ -24,21 +24,56 @@
     </div>
 
     <!-- Input fields -->
-    <input type="text" class="input-box" placeholder="Full Name">
-    <input type="email" class="input-box" placeholder="Email">
-    <input type="password" class="input-box" placeholder="Password">
-    <input type="password" class="input-box" placeholder="Confirm Password">
+    <form action="register" method="POST">
+        <!-- Username -->
+         <div class="placeholder-box tall">
+            <input type="text" class="input-field" placeholder="Fullname" name="Fullname" required>
+        </div>
+        <!-- Age -->
+         <div class="placeholder-box tall">
+            <input type="text" class="input-field" placeholder="Age" name="Age" required>
+        </div>
+        <!-- Gender -->
+         <div class="placeholder-box tall gender-box">
+            <label class="gender-label">Gender</label>
+            <div class="gender-options">
+                <label class="gender-option">
+                    <input type="radio" name="gender" value="male" required>
+                    <span class="custom-radio"></span>
+                    Male
+                </label>
+                <label class="gender-option">
+                    <input type="radio" name="gender" value="female" required>
+                    <span class="custom-radio"></span>
+                    Female
+                </label>
+            </div>
+        </div>        
+        <!-- Contact Details -->
+         <div class="placeholder-box tall">
+            <input type="text" class="input-field" placeholder="Contact Details" name="contact" required>
+         </div>
+        <!-- Email -->
+         <div class="placeholder-box tall">
+            <input type="email" class="input-field" placeholder="Email / Login" name="email" required>
+        </div>
+        <!-- Password -->
+         <div class="placeholder-box tall">
+            <input type="password" class="input-field" placeholder="Password" name="password" required>
+        </div>
+        <!-- Confirm Password -->
+         <div class="placeholder-box tall">
+            <input type="password" class="input-field" placeholder="Confirm Password" name="confirm_password" required>
+        </div>
 
-    <!-- Create Account button -->
-    <div class="placeholder-action">
-        <p>CREATE ACCOUNT</p>
-    </div>
+        <!-- Create Account button -->
+         <div class="placeholder-box tall">
+            <button type="submit" class="placeholder-action login-btn">CREATE ACCOUNT</button>
+         </div>
 
     <!-- Back button -->
     <a href="/" class="feature-btn">Back to Home</a>
-
-</div>
-
+  </div>
 </body>
 </html>
 

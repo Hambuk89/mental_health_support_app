@@ -53,6 +53,10 @@ def chat():
 def community():
     return render_template('community.html')
 
+@app.route('/admin_login')
+def admin_login():
+    return render_template('admin_login.html')
+
 @app.route('/Users')
 def users():
     all_users = User.query.all()
