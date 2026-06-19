@@ -15,6 +15,18 @@
   font-family: 'Merriweather', serif;
 }
 
+/* Mobile Wrapper (Added by Han) */
+.mobile-wrapper {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Welcome box */
 .welcome-box {
   border: 2px solid white;
@@ -148,17 +160,22 @@
 .top-bar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  align-items: center;
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto 30px auto;
+  padding: 0 20px;
 }
 
 .logo-img {
-  height: 100%;
+  height: 48px;
   width: auto;
   display: block;
 }
 
 .top-btn {
   background-color: white;
+  vertical-align: middle;
   color: var(--primary);
   padding: 10px 20px;
   border: 2px solid white;
@@ -620,4 +637,20 @@
   padding: 20px;
   color: white;
   opacity: 0.9;
+}
+
+/* To ensure proper alignments */
+.top-bar,
+.welcome-box,
+.feature-grid {
+  width: 100%;
+  max-width: 430px;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments by Han */
+@media (max-width: 480px) {
+  .mobile-wrapper {
+    padding: 15px;
+  }
 }
