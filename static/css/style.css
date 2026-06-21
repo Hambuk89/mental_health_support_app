@@ -238,6 +238,7 @@ body {
 .section-title {
   color: white;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Placeholder lines (for mission statement) */
@@ -814,6 +815,22 @@ body {
   width: 100%;
   max-width: 430px;
   box-sizing: border-box;
+}
+
+.exercise-line {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.mission-subtext {
+    color: white;
+    opacity: 0.85;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
 }
 
 /* Responsive adjustments by Han */

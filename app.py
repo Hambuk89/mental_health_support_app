@@ -62,9 +62,12 @@ def users():
     all_users = User.query.all()
     return str(all_users)
 
+#Added by Aki
+@app.route("/mood-submitted")
+def mood_submitted():
+    return render_template("mood_submitted.html")
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
-
-
