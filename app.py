@@ -1,5 +1,5 @@
 #Set up the Flask application and database configuration (By Han)
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session
 from extensions import db
 from models import User, Question # Importing the Question model for handling questions in the Q&A forum
 
@@ -29,7 +29,7 @@ def profile():
 @app.route("/qa_forum")
 def qa_forum():
     role = session.get("role", "user") # Default to "user" if no role is set
-    return render_template("qa_forum.html")
+    return render_template("qa_forum.html", role=role)
 
 @app.route('/mood')
 def mood():
@@ -82,5 +82,4 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
-
 
