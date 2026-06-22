@@ -1,4 +1,6 @@
-<!-- Mood Page created by Aki -->
+<!-- ============================================================
+     MOOD JOURNAL PAGE — Created by Aki
+     ============================================================ -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Journal</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class="page-bg">
-
 <div class="mobile-wrapper">
 
-    <!-- Top bar -->
+    <!-- ============================================================
+         TOP BAR
+         ============================================================ -->
     <div class="top-bar">
         <a href="/" class="top-btn">
             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
@@ -21,30 +23,59 @@
         <a href="/login" class="top-btn">LOGIN</a>
     </div>
 
-    <!-- Page header -->
+    <!-- ============================================================
+         PAGE HEADER
+         ============================================================ -->
     <div class="page-header">
         <h1>MOOD JOURNAL</h1>
     </div>
 
-    <!-- Mood circle container, updated by Han -->
-    <form action="/add_mood" method="post" class="mood-circle">
-        <button type="submit" name="mood_label=" value="happy" class="mood-box mood1">😄HAPPY</button>
-        <button type="submit" name="mood_label=" value="sad" class="mood-box mood2">😢SAD</button>
-        <button type="submit" name="mood_label=" value="angry" class="mood-box mood3">😠ANGRY</button>
-        <button type="submit" name="mood_label=" value="anxious" class="mood-box mood4">😌CALM</button>
-        <button type="submit" name="mood_label=" value="excited" class="mood-box mood5">🤩EXCITED</button>
-        <button type="submit" name="mood_label=" value="tired" class="mood-box mood6">😴TIRED</button>
-    </form>
+    <!-- ============================================================
+         MOOD SELECTION CIRCLE
+         Each mood linking to a confirmation page
+         ============================================================ -->
+    <div class="mood-circle">
+        <a href="/confirm-mood/tired" class="mood-box mood1">
+            <span class="emoji">😴</span>
+            <span class="label">TIRED</span>
+        </a>
 
-    <!-- Submit button, updated by Aki -->
-    <a href="/mood-submitted" class="submit-placeholder">
-         <p>SUBMIT MOODS TO JOURNAL</p>
-    </a>
+        <a href="/confirm-mood/happy" class="mood-box mood2">
+            <span class="emoji">😄</span>
+            <span class="label">HAPPY</span>
+        </a>
 
-    <!-- Back button -->
+        <a href="/confirm-mood/sad" class="mood-box mood3">
+            <span class="emoji">😢</span>
+            <span class="label">SAD</span>
+        </a>
+
+        <a href="/confirm-mood/excited" class="mood-box mood4">
+            <span class="emoji">🤩</span>
+            <span class="label">EXCITED</span>
+        </a>
+
+        <a href="/confirm-mood/calm" class="mood-box mood5">
+            <span class="emoji">😌</span>
+            <span class="label">CALM</span>
+        </a>
+
+        <a href="/confirm-mood/angry" class="mood-box mood6">
+            <span class="emoji">😡</span>
+            <span class="label">ANGRY</span>
+        </a>
+    </div>
+
+    <!-- ============================================================
+         VIEW JOURNAL BUTTON
+         ============================================================ -->
+    <a href="/my-journal" class="feature-btn">View My Journal</a>
+
+    <!-- ============================================================
+         BACK BUTTON
+         ============================================================ -->
     <a href="/" class="feature-btn">Back to Home</a>
 
 </div>
-
 </body>
 </html>

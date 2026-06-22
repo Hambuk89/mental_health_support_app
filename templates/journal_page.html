@@ -1,14 +1,13 @@
 <!-- ============================================================
-     ABOUT PAGE
-     Created by Han — Updated and organised by Aki
+     JOURNAL PAGE
+     Created by Aki
    ============================================================ -->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <title>My Mood Journal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -31,34 +30,45 @@
          PAGE HEADER
        ============================================================ -->
     <div class="page-header">
-        <h1>ABOUT US</h1>
+        <h1>MY JOURNAL</h1>
     </div>
 
 
     <!-- ============================================================
-         IMAGE BOX
-       ============================================================ -->
-    <div class="placeholder-box">
-        <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" 
-             class="placeholder-img" 
-             alt="About page illustration">
-    </div>
-
-
-    <!-- ============================================================
-         MISSION STATEMENT
+         JOURNAL ENTRIES
        ============================================================ -->
     <div class="page-content">
-        <h2 class="section-title">MISSION STATEMENT</h2>
 
-        <p class="mission-subtext">
-            Our mission is to create a safe, supportive digital space where individuals can explore their wellbeing, express their emotions, and access tools that encourage balance, reflection, and personal growth. We aim to empower users with simple, accessible resources that promote mental clarity, emotional awareness, and everyday resilience. Together let's become our best selves!
-        </p>
+        {% if moods %}
+            {% for entry in moods %}
+                <p class="exercise-line">
+
+                    {% if entry.mood == "happy" %} 😄 HAPPY
+                    {% elif entry.mood == "sad" %} 😢 SAD
+                    {% elif entry.mood == "angry" %} 😠 ANGRY
+                    {% elif entry.mood == "calm" %} 😌 CALM
+                    {% elif entry.mood == "excited" %} 🤩 EXCITED
+                    {% elif entry.mood == "tired" %} 😴 TIRED
+                    {% endif %}
+
+                    — <span style="opacity:0.8;">{{ entry.time }}</span>
+                </p>
+            {% endfor %}
+        {% else %}
+            <p class="exercise-line">No moods logged yet.</p>
+        {% endif %}
+
     </div>
 
 
     <!-- ============================================================
-         BACK BUTTON
+         BACK TO MOOD JOURNAL BUTTON
+       ============================================================ -->
+    <a href="/mood" class="feature-btn">Back to Mood Journal</a>
+
+
+    <!-- ============================================================
+         BACK TO HOME BUTTON
        ============================================================ -->
     <a href="/" class="feature-btn">Back to Home</a>
 

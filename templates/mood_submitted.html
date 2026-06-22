@@ -1,4 +1,8 @@
-<!-- mood submitted page created by Aki -->
+<!-- ============================================================
+     MOOD SUBMITTED PAGE
+     Created by Aki
+   ============================================================ -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,31 +12,47 @@
 </head>
 
 <body class="page-bg">
-
 <div class="mobile-wrapper">
 
-    <!-- Top bar -->
+    <!-- ============================================================
+         TOP BAR
+       ============================================================ -->
     <div class="top-bar">
         <a href="/" class="top-btn">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" 
+                 alt="Logo" class="logo-img">
         </a>
         <a href="/login" class="top-btn">LOGIN</a>
     </div>
 
-    <!-- Page header -->
+
+    <!-- ============================================================
+         PAGE HEADER
+       ============================================================ -->
     <div class="page-header">
         <h1>MOOD SUBMITTED</h1>
     </div>
 
-    <!-- Message box -->
+
+    <!-- ============================================================
+         MESSAGE BOX
+       ============================================================ -->
     <div class="placeholder-box tall" style="height:auto; padding:20px; text-align:center;">
         <p>Your mood has been added to your journal.</p>
     </div>
 
-    <!-- Back button -->
+
+    <!-- ============================================================
+         VIEW JOURNAL BUTTON
+       ============================================================ -->
+    <a href="/mood" class="feature-btn">Back to Mood Journal</a>
+
+
+    <!-- ============================================================
+         BACK BUTTON
+       ============================================================ -->
     <a href="/" class="feature-btn">Back to Home</a>
 
 </div>
-
 </body>
 </html>
