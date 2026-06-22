@@ -13,6 +13,11 @@ if (document.getElementById("category-selection")) {
 
     let currentCategory = null;
 
+    function scrollToBottom() {
+        const chatArea = document.getElementById("chat-area");
+        chatArea.scrollTop = chatArea.scrollHeight;
+    }
+
     function openBoard(category) {
         document.getElementById('category-selection').style.display = 'none';
         document.getElementById('board-section').style.display = 'block';
@@ -26,7 +31,9 @@ if (document.getElementById("category-selection")) {
             msgDiv.classList.add('message', 'user-message');
             msgDiv.innerText = msg;
             chatArea.appendChild(msgDiv);
-        })
+        });
+
+        scrollToBottom();
     }
 
     function backToCategory() {
@@ -48,5 +55,7 @@ if (document.getElementById("category-selection")) {
         messages[currentCategory].push(message);
 
         document.getElementById('message-input').value = '';
+
+        scrollToBottom();
     }
 }

@@ -683,7 +683,9 @@ body {
   letter-spacing: 0.3px;
 }
 
-/* For the Q&A Forum Page ask a question box by Han */
+/* =================================================
+  For the Q&A Forum Page ask a question box by Han 
+===================================================*/
 .typing-box2 {
   width: 300px;
   height: 100px;
@@ -704,6 +706,7 @@ body {
 
 .question-form {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .qa-container {
@@ -718,13 +721,13 @@ body {
 
 .question-item {
   background-color: transparent;
-  border: 1px solid white;
-  padding: 10px;
+  border: 2px solid white;
+  padding: 15px;
   border-radius: 12px;
   margin-bottom: 10px;
   cursor: pointer;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .answer-box {
@@ -734,9 +737,34 @@ body {
   border-radius: 12px;
 }
 
+.answerForm textarea{
+  width: 70%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  padding: 8px;
+  resize: none;
+  margin-right: 10px;
+}
+
+.answerForm button{
+  background-color: white;
+  color: #7A8F6A;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.answerForm button:hover {
+  background-color: #C57A5A;
+  color: white;
+}
+
 .answers div{
-  color: black;
-  margin-bottom: 10px;
+  color: white;
+  margin-bottom: 8px;
 }
 
 /* =================================
@@ -785,17 +813,23 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 80%;
+  width: 100%;
+  max-width: 380px;
   margin: 20px auto;
   max-height: 400px;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 10px;
 }
 
 .message {
   padding: 10px 15px;
   border-radius: 10px;
   margin: 5px 0;
-  width: fit-content;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  box-sizing: border-box;
   max-width: 70%;
 }
 
@@ -859,7 +893,48 @@ textarea {
   margin-top: 20px;
 }
 
+/* =================================
+        Chat Page Layout by Han
+  ================================*/
 
+/* Chat container */
+.chat-container {
+  width: 100%;
+  height: 420;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* User message box */
+.user-bubble {
+  align-self: flex-end;
+  background-color: white;
+  color: black;
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 75%;
+  font-size: 12px;
+}
+
+/* Ai-Bot message box */
+.bot-bubble {
+  align-self: flex-end;
+  background-color: black;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px sold white;
+  max-width: 75%;
+  font-size: 12px;
+}
+
+/* Smooth scroll for chat container */
+.chat-container {
+  scroll-behavior: smooth;
+}
 
 
 
@@ -897,42 +972,6 @@ textarea {
   color: white;
   opacity: 0.7;
   letter-spacing: 0.3px;
-}
-
-/* Scale the community layout to fit mobile */
-.community-scale {
-    transform: scale(0.75);      
-    transform-origin: top left; 
-    width: 100%;                
-}
-
-/* MOBILE COMMUNITY LAYOUT */
-.community-mobile {
-    display: grid;
-    grid-template-columns: 120px 1fr; 
-    gap: 15px;
-    width: 100%;
-}
-
-/* Sidebar */
-.community-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* Messages column */
-.community-messages {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Reduce padding for mobile fit */
-.community-sidebar,
-.community-messages,
-.chat-placeholder {
-    padding: 15px;
 }
 
 .category-btn {
@@ -989,6 +1028,13 @@ textarea {
     text-align: center;
 }
 
+
+
+
+/* =============================
+      Responsive adjustments
+==============================*/
+
 /* To ensure proper alignments */
 .top-bar,
 .welcome-box,
@@ -1004,3 +1050,19 @@ textarea {
     padding: 15px;
   }
 }
+
+/* To prevent horizontal scrolling on the entire page */
+body, html {
+  overflow-x: hidden
+}
+
+/* To prevent horizontal overflow inside the mobile wrapper */
+.mobile-wrapper {
+  overflow-x: hidden;
+}
+
+/* Ensure padding does not increase the total width */
+.chat container {
+  box-sizing: border-box;
+}
+
