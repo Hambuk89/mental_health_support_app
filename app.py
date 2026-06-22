@@ -108,6 +108,10 @@ def add_mood(mood):
 def my_journal():
     return render_template("journal_page.html", moods=mood_log)
 
+@app.route("/mood-submitted")
+def mood_submitted():
+    return render_template("mood_submitted.html")
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
