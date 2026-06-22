@@ -1,8 +1,8 @@
 #Set up the Flask application and database configuration (By Han)
 <<<<<<< HEAD
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session, redirect
 =======
-from flask import Flask, render_template, redirect
+
 >>>>>>> 45cc252 (Organised pages + updated layout + mood journal completed + small database additions + organised css)
 from extensions import db
 from models import User, Question # Importing the Question model for handling questions in the Q&A forum
