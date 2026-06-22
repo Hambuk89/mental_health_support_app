@@ -1,6 +1,10 @@
+/* ====================================
+     AI Chat Bot Support Javascript
+===================================== */
+
 document.getElementById("send-btn").addEventListener("click", function() {
     const input = document.getElementById("chat-input");
-    const text = input.ariaValueMax.trim();
+    const text = input.value.trim();
     if (!text) return;
 
     const chatBox = document.getElementById("chat-container");
