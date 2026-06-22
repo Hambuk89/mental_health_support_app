@@ -1,9 +1,6 @@
 #Set up the Flask application and database configuration (By Han)
-<<<<<<< HEAD
 from flask import Flask, render_template, request, jsonify, session, redirect
-=======
 
->>>>>>> 45cc252 (Organised pages + updated layout + mood journal completed + small database additions + organised css)
 from extensions import db
 from models import User, Question # Importing the Question model for handling questions in the Q&A forum
 
@@ -71,7 +68,6 @@ def users():
     all_users = User.query.all()
     return str(all_users)
 
-<<<<<<< HEAD
 @app.route("/QA_forum")
 def QA_forum():
     return render_template("QA_forum.html")
@@ -85,12 +81,6 @@ def submit_question():
     print("Received question:", question)
     return jsonify({"success": True})
 
-=======
-#Added by Aki, Mood journal connections:
-@app.route("/mood-submitted")
-def mood_submitted():
-    return render_template("mood_submitted.html")
->>>>>>> 45cc252 (Organised pages + updated layout + mood journal completed + small database additions + organised css)
 
 @app.route("/confirm-mood/<mood>")
 def confirm_mood(mood):
