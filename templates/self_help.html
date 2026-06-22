@@ -1,4 +1,8 @@
-<!-- Self-Help Page created by Han -->
+<!-- ============================================================
+     SELF-HELP PAGE
+     Created by Han — Updated and organised by Aki
+   ============================================================ -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,27 +10,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self Help Tools</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class="page-bg">
-
 <div class="mobile-wrapper">
 
-    <!-- Top bar -->
+    <!-- ============================================================
+         TOP BAR
+       ============================================================ -->
     <div class="top-bar">
         <a href="/" class="top-btn">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" 
+                 alt="Logo" class="logo-img">
         </a>
         <a href="/login" class="top-btn">LOGIN</a>
     </div>
 
-    <!-- Page header -->
+
+    <!-- ============================================================
+         PAGE HEADER
+       ============================================================ -->
     <div class="page-header">
         <h1>SELF HELP TOOLS</h1>
     </div>
 
-    <!-- Exercise 1, updated by Aki -->
+
+    <!-- ============================================================
+         EXERCISE 1 — BREATHING
+       ============================================================ -->
     <div class="exercise-block">
 
         <h2 class="exercise-title">EXERCISE 1 — BREATHING</h2>
@@ -43,13 +54,18 @@
 
             <!-- Image -->
             <div class="exercise-image">
-                <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" class="placeholder-img" alt="Breathing exercise illustration">
+                <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" 
+                     class="placeholder-img" 
+                     alt="Breathing exercise illustration">
             </div>
 
         </div>
     </div>
 
-    <!-- Exercise 2, updated by Aki -->
+
+    <!-- ============================================================
+         EXERCISE 2 — MEDITATION
+       ============================================================ -->
     <div class="exercise-block">
 
         <h2 class="exercise-title">EXERCISE 2 — MEDITATION</h2>
@@ -66,16 +82,20 @@
 
             <!-- Image -->
             <div class="exercise-image">
-                <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" class="placeholder-img" alt="Meditation exercise illustration">
+                <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" 
+                     class="placeholder-img" 
+                     alt="Meditation exercise illustration">
             </div>
 
         </div>
     </div>
 
-    <!-- Back button -->
+
+    <!-- ============================================================
+         BACK BUTTON
+       ============================================================ -->
     <a href="/" class="feature-btn">Back to Home</a>
 
 </div>
-
 </body>
 </html>

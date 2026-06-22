@@ -1,9 +1,13 @@
 #Set up the Flask application and database configuration (By Han)
-from flask import Flask, render_template, request, jsonify, session
+from flask import Flask, render_template, request, jsonify, session, redirect
+
 from extensions import db
 from models import User, Question # Importing the Question model for handling questions in the Q&A forum
 
 app = Flask(__name__)
+
+mood_log = []
+from datetime import datetime
 
 # Configure the SQLite database (By Han)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -77,6 +81,36 @@ def submit_question():
     print("Received question:", question)
     return jsonify({"success": True})
 
+
+@app.route("/confirm-mood/<mood>")
+def confirm_mood(mood):
+    return render_template(
+        "confirmation.html",
+        title="CONFIRM MOOD",
+        message=f"Add {mood.upper()} to your journal?",
+        confirm_text="Yes, Add Mood!",
+        confirm_url=f"/add_mood/{mood}",
+        cancel_url="/mood"
+    )
+
+@app.route("/add_mood/<mood>")
+def add_mood(mood):
+    timestamp = datetime.now().strftime("%d %B %Y, %I:%M %p")
+
+    mood_log.append({
+        "mood": mood,
+        "time": timestamp
+    })
+
+    return redirect("/mood-submitted")
+
+@app.route("/my-journal")
+def my_journal():
+    return render_template("journal_page.html", moods=mood_log)
+
+@app.route("/mood-submitted")
+def mood_submitted():
+    return render_template("mood_submitted.html")
 
 if __name__ == '__main__':
     with app.app_context():

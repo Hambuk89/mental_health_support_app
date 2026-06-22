@@ -1,14 +1,13 @@
 <!-- ============================================================
-     ABOUT PAGE
-     Created by Han — Updated and organised by Aki
+     CONFIRMATION PAGE
+     Created by Aki
    ============================================================ -->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <title>{{ title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
@@ -31,36 +30,32 @@
          PAGE HEADER
        ============================================================ -->
     <div class="page-header">
-        <h1>ABOUT US</h1>
+        <h1>{{ title }}</h1>
     </div>
 
 
     <!-- ============================================================
-         IMAGE BOX
+         MESSAGE BOX
        ============================================================ -->
-    <div class="placeholder-box">
-        <img src="{{ url_for('static', filename='images/What-is-Mental-Health.jpeg') }}" 
-             class="placeholder-img" 
-             alt="About page illustration">
+    <div class="placeholder-box tall" style="height:auto; padding:20px; text-align:center;">
+        <p>{{ message }}</p>
     </div>
 
 
     <!-- ============================================================
-         MISSION STATEMENT
+         CONFIRM BUTTON
        ============================================================ -->
-    <div class="page-content">
-        <h2 class="section-title">MISSION STATEMENT</h2>
-
-        <p class="mission-subtext">
-            Our mission is to create a safe, supportive digital space where individuals can explore their wellbeing, express their emotions, and access tools that encourage balance, reflection, and personal growth. We aim to empower users with simple, accessible resources that promote mental clarity, emotional awareness, and everyday resilience. Together let's become our best selves!
-        </p>
-    </div>
+    <a href="{{ confirm_url }}" class="feature-btn">
+        {{ confirm_text }}
+    </a>
 
 
     <!-- ============================================================
-         BACK BUTTON
+         CANCEL BUTTON
        ============================================================ -->
-    <a href="/" class="feature-btn">Back to Home</a>
+    <a href="{{ cancel_url }}" class="feature-btn">
+        Cancel
+    </a>
 
 </div>
 </body>
