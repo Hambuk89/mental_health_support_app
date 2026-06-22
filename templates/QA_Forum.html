@@ -26,53 +26,26 @@
         <h1>Q&A FORUM</h1>
     </div>
 
-    <!-- Two-column layout (matching Community) -->
-    <div class="community-mobile">
-
-        <!-- Left sidebar (QUESTIONS) -->
-        <div class="community-sidebar">
-            <h2 class="cat-title">QUESTIONS</h2>
-
-            <div class="category-btn"><p>Q1</p></div>
-            <div class="category-btn"><p>Q2</p></div>
-            <div class="category-btn"><p>Q3</p></div>
-
-            <div class="category-btn"><p>POST A Q</p></div>
-        </div>
-
-        <!-- Right message area (Selected question + answers) -->
-        <div class="community-messages">
-
-            <!-- Selected question -->
-            <div class="chat-placeholder user-msg">
-                <p class="msg-label">SELECTED QUESTION</p>
-                <div class="placeholder-line"></div>
-                <div class="placeholder-line"></div>
-                <div class="placeholder-line short"></div>
-            </div>
-
-            <!-- Answers -->
-            <div class="chat-placeholder user-msg">
-                <p class="msg-label">USER ANSWER</p>
-                <div class="placeholder-line"></div>
-                <div class="placeholder-line short"></div>
-            </div>
-
-            <!-- Typing + Submit -->
-            <textarea class="typing-box" placeholder="Type your answer..."></textarea>
-
-            <div class="send-placeholder">
-                <p>SUBMIT ANSWER</p>
-            </div>
-
-        </div>
-
+    <!-- Ask a Question List Form by Han -->
+     <div class="question-form">
+        <form id="questionForm">
+            <textarea class="typing-box2" name="question" placeholder="Type your question..." required></textarea>
+             <button type="submit" class="placeholder-action login-btn">SUBMIT QUESTION</button>
+        </form>
     </div>
+
+    <!-- Placeholder for questions and answers -->
+    <div id="questionList" class="question-list"></div>
+
 
     <!-- Back button -->
     <a href="/" class="feature-btn">Back to Home</a>
 
 </div>
+<script>
+    const userRole = "{{ role }}"
+</script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>

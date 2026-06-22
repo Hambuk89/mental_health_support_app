@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: auto; /* NEW */
 }
 
 /* Added to ensure consistent font sizes */
@@ -681,6 +682,187 @@ body {
   opacity: 0.7;
   letter-spacing: 0.3px;
 }
+
+/* For the Q&A Forum Page ask a question box by Han */
+.typing-box2 {
+  width: 300px;
+  height: 100px;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: transparent;
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  font-family: 'Merriweather', serif;
+  opacity: 0.9;
+  resize: none;
+  outline: none;
+  margin: 0 auto;
+  display: block;
+}
+
+.question-form {
+  margin-bottom: 30px;
+}
+
+.qa-container {
+  text-align: center;
+  color: white;
+}
+
+.question-list {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.question-item {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.answer-box {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 12px;
+}
+
+.answers div{
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* =================================
+  Community Page Layout by Han
+  ================================*/
+
+  body {
+  background-color: #7b8e6a;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.header {
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.category-btn, .top-menu button, #submit-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.category-btn:hover, .top-menu button:hover, #submit-btn:hover {
+  background-color: white;
+  color: #7b8e6a;
+}
+
+.top-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+#chat-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin: 20px auto;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 5px 0;
+  width: fit-content;
+  max-width: 70%;
+}
+
+.user-message {
+  background-color: white;
+  color: black;
+  align-self: flex-end;
+}
+
+.other-message {
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  align-self: flex-start;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 80%;
+}
+
+textarea {
+  width: 70%;
+  height: 60px;
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  resize: none;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.category-btn {
+  width: 250px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.category-btn:hover {
+  background-color: white;
+  color: #7b8e6a;
+}
+
+.back-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+
+
+
 
 .send-placeholder1 {
   width: 100%;

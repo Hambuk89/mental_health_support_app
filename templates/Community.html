@@ -26,52 +26,40 @@
         <h1>COMMUNITY CHANNEL</h1>
     </div>
 
-    <!-- Two-column layout -->
-    <div class="community-mobile">
-
-        <!-- Left sidebar -->
-        <div class="community-sidebar">
-            <h2 class="cat-title">CATEGORIES</h2>
-
-            <div class="category-btn"><p>CAT. 1</p></div>
-            <div class="category-btn"><p>CAT. 2</p></div>
-            <div class="category-btn"><p>CAT. 3</p></div>
-            <div class="category-btn"><p>CAT. 4</p></div>
+    <!-- Category selection -->
+    <div id="category-selection">
+        <h3>SELECT A CATEGORY</h3>
+        <div class="category-list">
+            <button class="category-btn" onclick="openBoard('Life & Workplace Stress')">Life / Workplace Stress</button>
+            <button class="category-btn" onclick="openBoard('Mind & Body Symptoms')">Mind / Body Symptoms</button>
+            <button class="category-btn" onclick="openBoard('Motivation')">Motivation</button>
+            <button class="category-btn" onclick="openBoard('Casual Lounge')">Casual Lounge</button>
         </div>
+    </div>
 
+    <!-- Board Section -->
+    <div id="board-section" style="display:none;">
 
-        <!-- Right message area -->
-        <div class="community-messages">
+        <h3 id="board-title"></h3>
 
-            <div class="chat-placeholder user-msg">
-                <p class="msg-label">USER</p>
-                <div class="placeholder-line"></div>
-                <div class="placeholder-line"></div>
-                <div class="placeholder-line short"></div>
-            </div>
-
-            <div class="chat-placeholder bot-msg">
-                <p class="msg-label">OTHER USER</p>
-                <div class="placeholder-line"></div>
-                <div class="placeholder-line"></div>
-                <div class="placeholder-line short"></div>
-            </div>
-
-            <!-- Typing + Submit -->
-            <textarea class="typing-box" placeholder="Type your message..."></textarea>
-
-            <div class="send-placeholder">
-                <p>SUBMIT ANSWER</p>
-            </div>
-
+        <div id="chat-area"></div>
+        
+        <!--input area-->
+        <div class="input-area">
+            <textarea id="message-input" placeholder="Type your message..."></textarea>
+            <button id="submit-btn" onclick="submitMessage()">Submit</button>
         </div>
-
     </div>
 
     <!-- Back button -->
+    <div class="back-buttons">
+        <button class="feature-btn" onclick="backToCategory()">Back to Category</button>
     <a href="/" class="feature-btn">Back to Home</a>
+    </div>
 
 </div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
 </html>

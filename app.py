@@ -1,6 +1,7 @@
 #Set up the Flask application and database configuration (By Han)
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 from extensions import db
+from models import User, Question # Importing the Question model for handling questions in the Q&A forum
 
 app = Flask(__name__)
 
@@ -10,7 +11,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 
-from models import User
+
 
 # Page routes for the mental health support website (created by Han and Aki) #
 @app.route("/")
@@ -27,6 +28,7 @@ def profile():
 
 @app.route("/qa_forum")
 def qa_forum():
+    role = session.get("role", "user") # Default to "user" if no role is set
     return render_template("qa_forum.html")
 
 @app.route('/mood')
@@ -61,6 +63,20 @@ def admin_login():
 def users():
     all_users = User.query.all()
     return str(all_users)
+
+@app.route("/QA_forum")
+def QA_forum():
+    return render_template("QA_forum.html")
+
+@app.route("/submit_question", methods=["POST"])
+def submit_question():
+    question = request.form.get("question")
+    new_q = Question(content=question)
+    db.session.add(new_q)
+    db.session.commit()
+    print("Received question:", question)
+    return jsonify({"success": True})
+
 
 if __name__ == '__main__':
     with app.app_context():
