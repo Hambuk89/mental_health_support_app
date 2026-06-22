@@ -336,7 +336,7 @@ body {
 .input-field {
   width: 90%;
   height: 100%;
-  background: transparent;
+  background: tramood-boxnsparent;
   border: none;
   color: white;
   font-size: 18px;
@@ -375,6 +375,9 @@ body {
   text-decoration: none;
   display: block;
 }
+/* ============================================================
+   MOOD JOURNAL PAGE COMPONENTS
+   ============================================================ */
 
 /* Mood circle container */
 .mood-circle {
@@ -384,28 +387,49 @@ body {
   margin: 0 auto 40px auto;
 }
 
-/* Mood boxes */
-.mood-circle .mood-box {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border: 2px solid #7A8F6A;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #7A8F6A;
-  opacity: 0.9;
-  font-size: 16px;
+.mood-box {
+    position: absolute;
+    width: min(80px, 18vw);
+    height: min(80px, 18vw);
+    border: 2px solid white;
+    border-radius: 12px;
+    background-color: white;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    opacity: 0.95;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Positioning each mood around the circle */
-.mood1 { top: 0; left: 50%; transform: translate(-50%, 0); }
-.mood2 { top: 18%; right: 5%; transform: translate(0, -50%); }
-.mood3 { bottom: 18%; right: 5%; transform: translate(0, 50%); }
-.mood4 { bottom: 0; left: 50%; transform: translate(-50%, 0); }
-.mood5 { bottom: 18%; left: 5%; transform: translate(0, 50%); }
-.mood6 { top: 18%; left: 5%; transform: translate(0, -50%); }
+.mood-box:hover {
+    background-color: var(--accent);
+    color: white;
+}
+
+.emoji {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Mood positions */
+.mood1 { top: 0; left: 50%; margin-left: -40px; }
+.mood2 { top: 18%; right: 5%; margin-top: -40px; }
+.mood3 { bottom: 18%; right: 5%; margin-bottom: -40px; }
+.mood4 { bottom: 0; left: 50%; margin-left: -40px; }
+.mood5 { bottom: 18%; left: 5%; margin-bottom: -40px; }
+.mood6 { top: 18%; left: 5%; margin-top: -40px; }
+
+
 
 /* Submit button placeholder */
 .submit-placeholder {
