@@ -1,20 +1,19 @@
 #Set up the Flask application and database configuration (By Han)
 from flask import Flask, render_template, request, jsonify, session, redirect
-
 from extensions import db
 from models import User, Question # Importing the Question model for handling questions in the Q&A forum
+from datetime import datetime
 
 app = Flask(__name__)
 
 mood_log = []
 from datetime import datetime
-
+ 
 # Configure the SQLite database (By Han)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
-
 
 
 # Page routes for the mental health support website (created by Han and Aki) #
@@ -51,9 +50,25 @@ def register():
 def self_help():
     return render_template('self_help.html')
 
+# AI Chat #
 @app.route('/chat')
 def chat():
     return render_template('chat.html')
+
+@app.route('/send_message', methods=['POST'])
+def send_message():
+    data = request.get_json()
+    user_message = data.get("message", "")
+
+    ai_response = generate_ai_response(user_message)
+
+    return jsonify({
+        "user": user_message,
+        "ai": ai_response
+    })
+
+def generate_ai_response(user_message):
+    return f"AI Response: '{user_message}' Received! How can I help you further?"
 
 @app.route('/community')
 def community():
