@@ -38,21 +38,22 @@
          JOURNAL ENTRIES
        ============================================================ -->
     <div class="page-content">
-
         {% if moods %}
             {% for entry in moods %}
                 <p class="exercise-line">
-
-                    {% if entry.mood == "happy" %} 😄 HAPPY
+                    {% if entry.mood == "happy" %} 😊 HAPPY
                     {% elif entry.mood == "sad" %} 😢 SAD
-                    {% elif entry.mood == "angry" %} 😠 ANGRY
+                    {% elif entry.mood == "angry" %} 😡 ANGRY
                     {% elif entry.mood == "calm" %} 😌 CALM
                     {% elif entry.mood == "excited" %} 🤩 EXCITED
-                    {% elif entry.mood == "tired" %} 😴 TIRED
+                    {% elif entry.mood == "tired" %} 🥱 TIRED
                     {% endif %}
-
-                    — <span style="opacity:0.8;">{{ entry.time }}</span>
+                    – <span style="opacity:0.8;">{{ entry.time }}</span>
                 </p>
+
+                {% if entry.comment %}
+                    <p class="exercise-line" style="opacity:0.7;">“{{ entry.comment }}”</p>
+                {% endif %}
             {% endfor %}
         {% else %}
             <p class="exercise-line">No moods logged yet.</p>

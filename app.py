@@ -97,7 +97,7 @@ def submit_question():
     return jsonify({"success": True})
 
 
-@app.route("/confirm-mood/<mood>")
+@app.route("/confirm-mood/<mood>", methods=["GET", "POST"])
 def confirm_mood(mood):
     return render_template(
         "confirmation.html",
@@ -108,13 +108,15 @@ def confirm_mood(mood):
         cancel_url="/mood"
     )
 
-@app.route("/add_mood/<mood>")
+@app.route("/add_mood/<mood>", methods=["POST"])
 def add_mood(mood):
     timestamp = datetime.now().strftime("%d %B %Y, %I:%M %p")
+    comment = request.form.get("comment", "")
 
     mood_log.append({
         "mood": mood,
-        "time": timestamp
+        "time": timestamp,
+        "comment": comment
     })
 
     return redirect("/mood-submitted")

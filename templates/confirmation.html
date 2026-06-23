@@ -45,10 +45,10 @@
     <!-- ============================================================
          CONFIRM BUTTON
        ============================================================ -->
-    <a href="{{ confirm_url }}" class="feature-btn">
-        {{ confirm_text }}
-    </a>
-
+    <form action="{{ confirm_url }}" method="POST" class="comment-form">
+        <textarea name="comment" placeholder="Add a comment..." class="comment-box"></textarea>
+        <button type="submit" class="feature-btn">{{ confirm_text }}</button>
+    </form>
 
     <!-- ============================================================
          CANCEL BUTTON
