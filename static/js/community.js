@@ -19,6 +19,7 @@ if (document.getElementById("category-selection")) {
     }
 
     function openBoard(category) {
+        currentCategory = category;
         document.getElementById('category-selection').style.display = 'none';
         document.getElementById('board-section').style.display = 'block';
         document.getElementById('board-title').innerText = category;
@@ -56,6 +57,9 @@ if (document.getElementById("category-selection")) {
 
         document.getElementById('message-input').value = '';
 
-        scrollToBottom();
+        chatArea.scrollTo({
+            top: chatArea.scrollHeight,
+            behavior: 'smooth'
+        });
     }
 }
