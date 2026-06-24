@@ -29,12 +29,13 @@
     <!-- Profile options -->
     <div class="profile-grid">
 
-        <div class="profile-info"><p>NAME</p></div>
-        <div class="profile-info"><p>AGE</p></div>
-        <div class="profile-info"><p>CONTACT DETAILS</p></div>
-        <div class="profile-info"><p>MY CHARTS</p></div>
+        <div class="profile-info"><p>Full Name: {{ user.fullname }}</p></div>
+        <div class="profile-info"><p>Age: {{ user.age }}</p></div>
+        <div class="profile-info"><p>Gender: {{ user.gender}}</p></div>
+        <div class="profile-info"><p>Contact: {{ user.contact}}</p></div>
+        <div class="profile-info"><p>Email: {{ user.email}}</p></div>
 
-        <a href="/login" class="profile-btn link-btn">
+        <a href="/logout" class="profile-btn link-btn">
             <p>LOG OUT</p>
         </a>
 

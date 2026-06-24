@@ -48,7 +48,7 @@
                     {% elif entry.mood == "excited" %} 🤩 EXCITED
                     {% elif entry.mood == "tired" %} 🥱 TIRED
                     {% endif %}
-                    – <span style="opacity:0.8;">{{ entry.time }}</span>
+                    – <span style="opacity:0.8;">{{ entry.timestamp.strftime("%d %B %Y, %I:%M %p") }}</span>
                 </p>
 
                 {% if entry.comment %}

@@ -37,6 +37,13 @@
             <input type="password" class="input-field" placeholder="Password" name="password" required>
         </div>
 
+        <!-- Display error message when login fails -->
+        {% if error %}
+        <p style="color:white; text-align:center; margin-top:10px; opacity:0.9;">
+            {{ error }}
+        </p>
+        {% endif %}
+
         <!-- Login button -->
         <button type="submit" class="placeholder-action login-btn">LOGIN</button>
     </form>
