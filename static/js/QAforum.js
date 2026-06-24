@@ -23,8 +23,7 @@ if (document.getElementById("questionForm")) {
         .then(r => r.json())
         .then(d => {
             if (d.success) {
-                addQuestionToPage(questionText);
-                questionForm.reset();
+                window.location.reload();
             }
         });
     };

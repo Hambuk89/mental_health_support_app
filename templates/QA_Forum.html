@@ -35,8 +35,25 @@
     </div>
 
     <!-- Placeholder for questions and answers -->
-    <div class="question-list">
-        
+    <div id="questionList" class="question-list">
+        {% for q in questions %}
+            <div class="question-box">
+                <p><strong>Q:</strong> {{ q.content }}</p>
+
+                {% for a in answers %}
+                {% if a.question_id == q.id %}
+                <p class="answer"><strong>A:</strong> {{ a.content }}</p>
+                {% endif %}
+                {% endfor %}
+
+                {% if role == "admin" %}
+                <form action="/answer_question/{{ q.id }}" method="POST">
+                    <textarea name="answer" class="typing-box2" placeholder="write your answer..." required></textarea>
+                    <button type="submit" class="placeholder-action login-btn">SUBMIT ANSWER</button>
+                </form>
+                {% endif %}
+            </div>
+            {% endfor %}
     </div>
 
 

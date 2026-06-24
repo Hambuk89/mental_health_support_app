@@ -1,7 +1,7 @@
 #Set up the Flask application and database configuration (By Han)
 from flask import Flask, render_template, request, jsonify, session, redirect
 from extensions import db
-from models import User, Question # Importing the Question model for handling questions in the Q&A forum
+from models import User, Question, Answer # Importing the Question model for handling questions in the Q&A forum
 from datetime import datetime
 
 
@@ -10,7 +10,6 @@ app.secret_key = "mental_health_support_application"
 
 
 mood_log = []
-from datetime import datetime
  
 # Configure the SQLite database (By Han)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -21,6 +20,10 @@ db.init_app(app)
 
 # Page routes for the mental health support website (created by Han and Aki) #
 @app.route("/")
+def home():
+    return render_template("dashboard.html")
+
+@app.route("/dashboard")
 def dashboard():
     return render_template("dashboard.html")
 
@@ -38,13 +41,7 @@ def profile():
     # Get user info from DB
     user = User.query.get(session['user_id'])
 
-
     return render_template('profile.html', user=user)
-
-@app.route("/qa_forum")
-def qa_forum():
-    role = session.get("role", "user") # Default to "user" if no role is set
-    return render_template("qa_forum.html", role=role)
 
 @app.route('/mood')
 def mood():
@@ -151,13 +148,13 @@ def users():
     all_users = User.query.all()
     return str(all_users)
 
-@app.route("/QA_forum")
-def QA_forum():
+@app.route("/qa_forum")
+def qa_forum():
     role = session.get("role", "user")
     questions = Question.query.order_by(Question.timestamp.desc()).all()
     answers = Answer.query.all()
 
-    return render_template("QA_forum.html", role=role, questions=questions, answers=answers)
+    return render_template("qa_forum.html", role=role, questions=questions, answers=answers)
 
 @app.route("/submit_question", methods=["POST"])
 def submit_question():
