@@ -1,7 +1,7 @@
 #Set up the Flask application and database configuration (By Han)
 from flask import Flask, render_template, request, jsonify, session, redirect
 from extensions import db
-from models import User, Question, Answer # Importing the Question model for handling questions in the Q&A forum
+from models import User, Question, Answer, CommunityMessage # Importing the Question model for handling questions in the Q&A forum
 from datetime import datetime
 
 
@@ -49,6 +49,8 @@ def mood():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    success = session.pop('register_success', None)
+
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
@@ -58,7 +60,7 @@ def login():
 
         # Validate user and password
         if not user or user.password != password:
-            return render_template('login.html', error="Invalid email or password.")
+            return render_template('login.html', error="Invalid email or password.", success=success)
         
         # Save login session
         session['user_id'] = user.id
@@ -66,7 +68,7 @@ def login():
 
         return redirect('/dashboard')
 
-    return render_template('login.html')
+    return render_template('login.html', success=success)
 
 @app.route('/logout')
 def logout():
@@ -86,7 +88,7 @@ def register():
 
         # Check if passwords match
         if password != confirm_password:
-            return render_template('register.html', error="Wrong Passwords.")
+            return render_template('register.html', error="Passwords do not match.")
         
         #check for duplicate email
         existing_user = User.query.filter_by(email=email).first()
@@ -106,6 +108,8 @@ def register():
 
         db.session.add(new_user)
         db.session.commit()
+
+        session['register_success'] = "Account created successfully! Please log in"
 
         return redirect('/login')
     
@@ -138,6 +142,32 @@ def generate_ai_response(user_message):
 @app.route('/community')
 def community():
     return render_template('community.html')
+
+@app.route('/community/<category>')
+def community_category(category):
+    messages = CommunityMessage.query.filter_by(category=category).order_by(CommunityMessage.timestamp.asc()).all()
+    return render_template('community_category.html', category=category, messages=messages)
+
+@app.route('/community/send', methods=['POST'])
+def community_send():
+    if 'user_id' not in session:
+        return redirect('/login')
+    
+    category = request.form.get('category')
+    content = request.form.get('content')
+    user_id = session['user_id']
+
+    new_msg = CommunityMessage(
+        category=category,
+        content=content,
+        user_id=user_id
+    )
+
+    db.session.add(new_msg)
+    db.session.commit()
+
+    return redirect(f'/community/{category}')
+
 
 @app.route('/admin_login')
 def admin_login():

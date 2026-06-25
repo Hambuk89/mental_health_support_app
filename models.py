@@ -31,3 +31,10 @@ class Answer(db.Model):
     question_id = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False)
     admin_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
+class CommunityMessage(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    category = db.Column(db.String(70), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    content = db.Column(db.Text, nullable=False)
+    timestamp = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
+

@@ -26,6 +26,20 @@
         <h1>LOGIN</h1>
     </div>
 
+      <!-- Display success message when register successes -->
+    {% if success %}
+    <p style="color: #ff6b6b; text-align:center; margin-top:10px; opacity:0.9;">
+        {{ success }}
+    </p>
+    {% endif %}
+    
+    <!-- Display error message when login fails -->
+    {% if error %}
+    <p style="color:white; text-align:center; margin-top:10px; opacity:0.9;">
+        {{ error }}
+    </p>
+    {% endif %}
+
     <!-- Placeholder input boxes edited by Han -->
     <form action="login" method="POST">
         <!-- Username / Email-->
@@ -37,12 +51,7 @@
             <input type="password" class="input-field" placeholder="Password" name="password" required>
         </div>
 
-        <!-- Display error message when login fails -->
-        {% if error %}
-        <p style="color:white; text-align:center; margin-top:10px; opacity:0.9;">
-            {{ error }}
-        </p>
-        {% endif %}
+        
 
         <!-- Login button -->
         <button type="submit" class="placeholder-action login-btn">LOGIN</button>

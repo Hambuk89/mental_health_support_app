@@ -26,6 +26,13 @@
         <h1>REGISTER</h1>
     </div>
 
+    <!-- Error message -->
+    {% if error %}
+    <p style="color: #ff6b6b; text-align:center; margin-bottom: 15px;">
+        {{ error }}
+    </p>
+    {% endif %}
+       
     <!-- Input fields -->
     <form action="register" method="POST">
         <!-- Username -->
@@ -34,7 +41,7 @@
         </div>
         <!-- Age -->
          <div class="placeholder-box tall">
-            <input type="text" class="input-field" placeholder="Age" name="Age" required>
+            <input type="number" class="input-field" placeholder="Age" name="age" required>
         </div>
         <!-- Gender -->
          <div class="placeholder-box tall gender-box">
@@ -54,7 +61,7 @@
         </div>        
         <!-- Contact Details -->
          <div class="placeholder-box tall">
-            <input type="text" class="input-field" placeholder="Contact Details" name="contact" required>
+            <input type="number" class="input-field" placeholder="Contact Number" name="contact" required>
          </div>
         <!-- Email -->
          <div class="placeholder-box tall">

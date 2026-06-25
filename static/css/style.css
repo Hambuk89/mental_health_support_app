@@ -411,47 +411,6 @@ body {
   align-items: center;
 }
 
-/* ============================================================
-   COMMUNITY PAGE COMPONENTS
-   ============================================================ */
-
-.community-layout {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 25px;
-  margin-bottom: 40px;
-}
-
-.categories-box,
-.community-sidebar {
-  border: 2px solid white;
-  border-radius: 12px;
-  padding: 20px;
-  color: white;
-  opacity: 0.9;
-}
-
-.category-btn {
-  border: 2px solid white;
-  border-radius: 10px;
-  padding: 12px;
-  margin-bottom: 15px;
-  text-align: center;
-  color: white;
-  opacity: 0.9;
-  transition: 0.2s ease;
-}
-
-.category-btn:hover {
-  background-color: var(--accent);
-  transform: translateY(-3px);
-}
-
-.messages-box {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 
 /* ============================================================
    PROFILE PAGE COMPONENTS
@@ -653,29 +612,6 @@ body {
   padding: 0 10px;
 }
 
-.message {
-  padding: 10px 15px;
-  border-radius: 10px;
-  margin: 5px 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-  box-sizing: border-box;
-  max-width: 70%;
-}
-
-.user-message {
-  background-color: white;
-  color: black;
-  align-self: flex-end;
-}
-
-.other-message {
-  background-color: rgba(255,255,255,0.2);
-  color: white;
-  align-self: flex-start;
-}
-
 .input-area {
   display: flex;
   justify-content: center;
@@ -722,6 +658,37 @@ textarea {
   align-items: center;
   gap: 10px;
   margin-top: 20px;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 14px;
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.my-msg {
+  align-self: flex-start;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.other-msg {
+  align-self: flex-end;
+  background-color: black;
+  color: white;
+}
+
+.timestamp {
+  display: block;
+  font-size: 10px;
+  opacity: 0.7;
+  margin-top: 5px;
+  text-align: right;
 }
 
 /* =================================
