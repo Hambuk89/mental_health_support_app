@@ -1,7 +1,7 @@
 #Set up the Flask application and database configuration (By Han)
 from flask import Flask, render_template, request, jsonify, session, redirect
 from extensions import db
-from models import User, Question, Answer, CommunityMessage # Importing the Question model for handling questions in the Q&A forum
+from models import User, Question, Answer, CommunityMessage, MoodLog # Importing the Question model for handling questions in the Q&A forum
 from datetime import datetime
 
 

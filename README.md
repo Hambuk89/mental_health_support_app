@@ -97,14 +97,18 @@ from models import User
 
 with app.app_context():
     admin = User(
-        username="admin",
-        email="admin@example.com",
+        fullname="Admin",
+        age=0,
+        gender="Other",
+        contact="admin@yoobee.com",
+        email="admin@yoobee.com",
         password="admin123",
-        is_admin=True
+        role="admin"
     )
     db.session.add(admin)
     db.session.commit()
     print("Admin account created!")
+
 
 This will create an admin user with elevated permissions.
 
