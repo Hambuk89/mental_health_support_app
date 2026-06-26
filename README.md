@@ -1,18 +1,15 @@
 <!-- This README Page was created by Aki and Han -->
 
-### Real‑Time Mental Health Support App — Final Version
+### Real‑Time Mental Health Support App
+
+Overview 
+
 The Real‑Time Mental Health Support App is a fully developed Flask-based web application designed to provide users with a calming and supportive digital environment for mental wellbeing.
 This final version includes complete frontend and backend integration, user authentication, community interaction features, mood tracking, and a consistent mobile‑friendly UI.
 
-### The application follows the approved design system:
+### Features Implemented
 
-- Moss‑green color palette
-- White outlined UI components
-- Merriweather typography
-- Smooth hover animations
-- Minimal, calming layout optimized for mobile devices
-
-### User Features
+Core User Features
 - Dashboard with quick navigation
 - Chat interface (ready for real‑time integration)
 - Mood Journal submission + confirmation page
@@ -22,23 +19,70 @@ This final version includes complete frontend and backend integration, user auth
 - User Profile page
 - Login / Register system
 
-### Admin Features
+Admin Features
 - Admin‑only login page
 - Ability to respond to Q&A forum submissions
 - Admin account created manually via Python script
 
-### UI/UX Features
-- Consistent green theme
-- White outlined cards and buttons
-- Mobile‑optimized layout
+UI/UX Features
+- Moss‑green color palette
+- White outlined UI components
+- Merriweather typography
 - Smooth hover animations
-- Clean, app‑like interface
+- Mobile‑optimized layout
+- Clean, minimal interface
 
-### Technologies Used
-- Backend: Python 3, Flask
-- Frontend: HTML5, CSS3, JavaScript
-- Database: SQLite (auto‑generated database.db)
-- Styling: Merriweather Google Font
+### Tech Stack
+
+Frontend: HTML5, CSS3, JavaScript
+Chosen for simplicity, full control over UI, and compatibility with Flask.
+
+Backend: Flask (Python)
+Lightweight, easy routing, ideal for small‑to‑medium web apps.
+
+Database: SQLite
+Auto‑generated, zero‑configuration, perfect for academic prototypes.
+
+Styling: Custom CSS + Merriweather Google Font
+Matches the calming mental‑health‑focused design system.
+
+### Installation & Setup
+
+Prerequisites
+- Python 3
+- pip
+- Git
+
+Steps
+
+1. Clone the repository
+git clone https://github.com/team/projectname.git
+cd projectname
+
+2. Create & activate virtual environment (VS Terminal, Windows PowerShell)
+python -m venv venv
+venv\Scripts\activate
+
+3. Install dependencies
+pip install flask
+pip install flask_sqlalchemy
+pip install flask_bcrypt
+
+4. Run the Application
+python app.py
+
+5. Open in browser
+http://127.0.0.1:5000
+
+### How to Use
+1. Register or log in
+2. Navigate through the dashboard
+3. Submit a mood journal entry
+4. Explore community categories
+5. Ask questions in the Q&A forum (Admin)
+6. Chat with AI generated chatbot
+7. Access self‑help tools
+8. View or update your profile
 
 ### The projects Structure:
 
@@ -81,13 +125,14 @@ The database.db file is not included in the repository.
 When the app is run for the first time, Flask automatically creates the database file and initializes all required tables.
 No manual setup is required.
 
-### User & Admin Accounts
-### Regular User Accounts 
-Users can create their own accounts directly through the Register page in the application.
+### Key Implementation Details
 
-### Admin Account Creation
-Admin accounts cannot be created through the UI.
-They must be created manually using Python.
+Automatic Database Creation:  
+SQLite database (database.db) is auto‑generated on first run using SQLAlchemy.
+
+Admin Account Creation:  
+Users can create their own accounts directly through the Register page in the application.
+Admin users must be created manually using a Python script inside the app context.
 
 Run the following script inside the project directory:
 
@@ -109,33 +154,45 @@ with app.app_context():
     db.session.commit()
     print("Admin account created!")
 
-
 This will create an admin user with elevated permissions.
 
+Consistent UI System:  
+All pages follow the moss‑green theme, white outlines, and Merriweather typography.
 
+Modular Code Structure:  
+Separate files for routes, models, extensions, templates, and static assets.
 
-How to RUN the application:
-    1. Please create and activate a virtual environment (windows PowerShell) using:
-        python -m venv venv
-        venv\Scripts\activate
+### Testing
 
-    2. Then install Flask using:
-        pip install flask
-        pip install flask_sqlalchemy
-        pip install flask_bcrypt
+Manual Testing Performed
+- User registration & login
+- Mood journal submission
+- Community category navigation
+- Q&A submission & admin response
+- Profile page updates
+- Mobile responsiveness
 
-    3. Proceed to run the app, using the command:
-        python app.py
+Edge Cases Tested
+- Empty form submissions
+- Invalid login credentials
+- Missing fields in journal entries
 
-    4. Finally, open in browser using the following:
-        http://127.0.0.1:5000
-    And the dashboard will then load automatically for display and navigation.
+### Known Limitations
 
+- Chat is not yet real‑time (WebSockets planned).
+- No email verification system.
+- Admin creation requires manual script execution.
+
+### Team Contributions
+Aki: UI/UX design, frontend templates, backend logic, routing, styling system
+Han: Backend logic, frontend templates, database models, routing, styling system
 
 ### Future Improvements
-
 - Real‑time chat using WebSockets
 - AI‑powered chatbot integration
 - Advanced mood analytics
 - Community moderation tools
 - Accessibility improvements and dark mode
+
+### References
+-
