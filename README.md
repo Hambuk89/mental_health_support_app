@@ -195,4 +195,11 @@ Han: Backend logic, frontend templates, database models, routing, styling system
 - Accessibility improvements and dark mode
 
 ### References
--
+- pandas (for data handling)
+- numpy (for numerical operations)
+- scikit-learn (for machine learning tasks)
+- matplotlib (for plotting)
+- seaborn for visualisation
+- Flask (main web framework)
+- Jinja2 (templating engine - built into Flask)
+- Werkzeug (backend utilities - also built into Flask)
